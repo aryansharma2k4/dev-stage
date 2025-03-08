@@ -1,19 +1,18 @@
 # dev-stage
 
-**dev-stage** is a next-generation collaboration platform tailored for development teams. It seamlessly combines project management, real-time chatrooms with advanced AI integration, and task tracking—keeping your team's context intact and collaboration efficient.
+[![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/aryansharma2k4/dev-stage?include_prereleases)](https://img.shields.io/github/v/release/aryansharma2k4/dev-stage?include_prereleases)
+[![GitHub last commit](https://img.shields.io/github/last-commit/aryansharma2k4/dev-stage)](https://img.shields.io/github/last-commit/aryansharma2k4/dev-stage)
+[![GitHub issues](https://img.shields.io/github/issues-raw/aryansharma2k4/dev-stage)](https://img.shields.io/github/issues-raw/aryansharma2k4/dev-stage)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/aryansharma2k4/dev-stage)](https://img.shields.io/github/issues-pr/aryansharma2k4/dev-stage)
+[![GitHub license](https://img.shields.io/github/license/aryansharma2k4/dev-stage)](https://img.shields.io/github/license/aryansharma2k4/dev-stage)
 
----
+dev-stage is a next-generation collaboration platform for development teams. It brings together real-time chatrooms, project management, and advanced AI-driven assistance to keep your team’s context and codebase in sync—all in one intuitive interface.
 
 ## Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
 
 ---
 
@@ -64,3 +63,9 @@ dev-stage is designed to bring developers closer together. Whether you're brains
 - **Project Initialization:** Create T3 App
 - **AI Integration:** Gemini 2.0 Flash, GPT-4o mini
 - **Deployment:** Vercel
+
+
+
+
+
+
