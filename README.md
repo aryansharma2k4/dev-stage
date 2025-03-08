@@ -1,29 +1,66 @@
-# Create T3 App
+# dev-stage
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+**dev-stage** is a next-generation collaboration platform tailored for development teams. It seamlessly combines project management, real-time chatrooms with advanced AI integration, and task tracking—keeping your team's context intact and collaboration efficient.
 
-## What's next? How do I make an app with this?
+---
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Table of Contents
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+---
 
-## Learn More
+## Overview
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+dev-stage is designed to bring developers closer together. Whether you're brainstorming in chatrooms or tracking pending tasks (think Jira tickets), dev-stage keeps everything organized under a single project context. One of its standout capabilities is the ability to reference your entire codebase directly within conversations via hooks like `@codebase`—integrating your GitHub repository to provide AI-powered insights that remain contextually aware.
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+---
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Features
 
-## How do I deploy this?
+- **Project & Team Management**
+  - Create and manage projects with ease.
+  - Add collaborators and organize teams for each project.
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+- **Dynamic Chatrooms**
+  - Hold multiple chatrooms per project for focused discussions.
+  - Use AI-powered chat that supports all kinds of prompts.
+  - Reference your entire codebase with the `@codebase` hook to supply context to AI responses.
+
+- **Task Management**
+  - Manage pending tasks using a system similar to Jira tickets.
+  - Track progress, complete tasks, and stay organized.
+
+- **AI-Driven Assistance**
+  - Choose between advanced chatbot options including Gemini 2.0 Flash Extended Thinking, GPT-4, Claude, etc.
+  - Benefit from agentic AI capabilities that can propose and commit code changes (similar to tools like Cursor) by pushing updates to a new branch.
+
+- **Modern & Intuitive UI**
+  - Sleek design built with shadcnUI and TailwindCSS.
+  - Designed for an intuitive user experience.
+
+- **Secure & Scalable Deployment**
+  - Authentication managed by BetterAuth.
+  - Backend powered by Next.js, tRPC, Drizzle ORM, and Zustand for state management.
+  - Neon PostgreSQL for a robust database solution.
+  - Deployed seamlessly on Vercel.
+
+---
+
+## Tech Stack
+
+- **Frontend:** Next.js, shadcnUI, TailwindCSS
+- **State Management:** Zustand
+- **Backend:** tRPC, Next.js API routes, Drizzle ORM
+- **Database:** Neon PostgreSQL
+- **Authentication:** BetterAuth
+- **Project Initialization:** Create T3 App
+- **AI Integration:** Gemini 2.0 Flash, GPT-4o mini
+- **Deployment:** Vercel
