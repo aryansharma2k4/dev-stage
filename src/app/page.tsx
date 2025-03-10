@@ -25,7 +25,7 @@ export default function LandingPage() {
     setDarkMode((prev) => !prev);
     document.documentElement.classList.toggle("dark");
   };
-  
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -76,7 +76,7 @@ export default function LandingPage() {
         <section className="container mx-auto py-20 px-4 md:px-6 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-              dev-stage: Next-Generation Collaboration for Developers
+              dev-stage: Next-Generation Collaboration for Developers.
             </h1>
             <p className="text-xl text-muted-foreground">
               Streamline project creation, real-time chat, and AI-powered coding assistance in one unified platform.
