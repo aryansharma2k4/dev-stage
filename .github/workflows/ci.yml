@@ -1,0 +1,51 @@
+name: ⚡ CI - Build & Lint ✅
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: 🏗️ Build Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🏃 Set up Bun ⚡
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: 📦 Install Dependencies
+        run: bun install
+
+      - name: 🔨 Build Project
+        run: bun run build
+
+  lint:
+    name: 🧹 Lint Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 🏃 Set up Bun ⚡
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+
+      - name: 📦 Install Dependencies
+        run: bun install
+
+      - name: 🧐 Run Lint
+        run: bun run lint
+
+      - name: ✅ Build Tests
+        run: bun run build
