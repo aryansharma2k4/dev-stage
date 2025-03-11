@@ -2,9 +2,9 @@ import "@/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Providers } from "./providers";
-import { Nunito } from "next/font/google";
+import { Inter } from "next/font/google";
 
-const nunito = Nunito({
+const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-opensans",
@@ -22,7 +22,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${nunito.className}`}>
+    <html lang="en" className={`${inter.className}`}>
       <body>
         <TRPCReactProvider><Providers>{children}</Providers></TRPCReactProvider>
       </body>
