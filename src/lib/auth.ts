@@ -3,10 +3,12 @@ import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { db } from "@/server/db"; // your drizzle instance
 import { cache } from "react";
 import { headers } from "next/headers";
+import * as authSchema from "@/server/db/auth-schema"
  
 export const auth = betterAuth({
     database: drizzleAdapter(db, {
         provider: "pg", // or "mysql", "sqlite"
+        schema: authSchema,
     }),
     emailAndPassword: {  
         enabled: true

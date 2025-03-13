@@ -9,7 +9,7 @@ export function generateStaticParams() {
 export default function AuthPage() {
     return (
         <div className="flex flex-col items-center my-auto">
-            <AuthCard pathname="sign-in" />
+            <AuthCard pathname="sign-up" />
         </div>
     )
 }
