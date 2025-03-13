@@ -1,6 +1,7 @@
 "use client";
 import type React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -24,6 +25,9 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+import Header from "@/components/ui/header";
+import Image from "next/image";
+
 interface FeatureCardProps {
   icon: React.ReactNode;
   title: string;
@@ -36,48 +40,12 @@ interface TechCardProps {
 }
 
 export default function LandingPage() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const onDarkModeToggle = () => {
-    setDarkMode((prev) => !prev);
-    document.documentElement.classList.toggle("dark");
-  };
+  
 
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <header className="fixed left-0 right-0 top-0 z-50 bg-background/50 backdrop-blur-md">
-        <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-20">
-          <div className="flex items-center gap-2">
-            <GitBranch className="text-primary" />
-            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-2xl font-bold text-transparent">
-              dev-stage
-            </span>
-          </div>
-          <nav className="hidden items-center gap-6 md:flex">
-            <Button size="icon" variant="ghost" onClick={onDarkModeToggle}>
-              {darkMode ? <Sun /> : <Moon />}
-            </Button>
-            <Button variant="outline" size="sm">
-              Log In
-            </Button>
-            <Button size="sm">Sign Up</Button>
-          </nav>
-          <div className="flex gap-4 md:hidden">
-            <Button
-              size="icon"
-              variant="ghost"
-              className="md:hidden"
-              onClick={onDarkModeToggle}
-            >
-              {darkMode ? <Sun /> : <Moon />}
-            </Button>
-            <Button variant="ghost" size="icon" className="md:hidden">
-              <Menu />
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Header/>
 
       <main>
         {/* Hero Section */}
@@ -101,10 +69,12 @@ export default function LandingPage() {
           </div>
           <div className="relative mt-16">
             <div className="aspect-video overflow-hidden rounded-lg border shadow-xl">
-              <img
-                src="/placeholder.svg?height=720&width=1280"
+              <Image
+                src="/dev-stage-platform.jpg"
                 alt="dev-stage platform interface"
                 className="h-full w-full object-cover"
+                width="1280"
+                height="720"
               />
             </div>
             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 transform">

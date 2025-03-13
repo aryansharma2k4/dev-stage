@@ -3,7 +3,7 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 export default {
 	darkMode: 'class',
-    content: ["./src/**/*.tsx"],
+    content: ["./src/**/*.tsx","./node_modules/@daveyplate/better-auth-ui/dist/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
   	extend: {
   		fontFamily: {
