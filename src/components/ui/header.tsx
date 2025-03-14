@@ -18,12 +18,12 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed left-0 right-0 top-0 z-50 bg-background/40 backdrop-blur-md border-t border-b border-background">
+    <header className="fixed left-0 right-0 top-0 z-50 bg-background/40 backdrop-blur-md border-b border-background">
       <div className="container mx-auto flex items-center justify-between px-4 py-4 md:px-20">
         <Link href='/'>
           <div className="flex items-center gap-2">
-            <GitBranch className="text-primary" />
-            <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-2xl font-bold text-transparent">
+            <GitBranch className="text-primary dark:text-secondary-foreground" />
+            <span className="bg-gradient-to-r from-primary dark:from-secondary-foreground dark:to-secondary-foreground/80 to-primary/50 bg-clip-text text-2xl font-bold text-transparent">
               dev-stage
             </span>
           </div>

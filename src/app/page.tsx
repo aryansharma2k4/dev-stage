@@ -18,12 +18,7 @@ import {
   Github,
   Mail,
   ArrowRight,
-  Moon,
-  Sun,
-  Menu,
-  GitBranch,
 } from "lucide-react";
-import { useState } from "react";
 
 import Header from "@/components/ui/header";
 import Image from "next/image";
@@ -51,7 +46,7 @@ export default function LandingPage() {
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-36 text-center md:px-6">
           <div className="mx-auto max-w-3xl space-y-4">
-            <h1 className="text-4xl font-bold tracking-tight md:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight md:text-6xl bg-clip-text text-transparent from-primary dark:from-secondary-foreground dark:to-secondary-foreground/80 to-primary/50 bg-gradient-to-r">
               dev-stage: Next-Generation Collaboration for Developers.
             </h1>
             <p className="text-xl text-muted-foreground">
