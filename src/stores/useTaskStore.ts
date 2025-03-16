@@ -1,7 +1,4 @@
 // src/stores/useTaskStore.ts
-import { create } from 'zustand';
-import { devtools, persist } from 'zustand/middleware';
-import { api } from '@/trpc/server';
 
 export type Task = {
   id: string;
@@ -24,26 +21,26 @@ type TaskFilters = {
   projectId?: string;
 };
 
-interface TaskState {
-  tasks: Task[];
-  isLoading: boolean;
-  error: string | null;
-  filters: TaskFilters;
+// interface TaskState {
+//   tasks: Task[];
+//   isLoading: boolean;
+//   error: string | null;
+//   filters: TaskFilters;
   
-  // Actions
-  setTasks: (tasks: Task[]) => void;
-  addTask: (task: Task) => void;
-//   updateTask: (id: string, data: Partial<Task>) => void;
-//   removeTask: (id: string) => void;
-//   setFilters: (filters: TaskFilters) => void;
-//   clearFilters: () => void;
+//   // Actions
+//   setTasks: (tasks: Task[]) => void;
+//   addTask: (task: Task) => void;
+// //   updateTask: (id: string, data: Partial<Task>) => void;
+// //   removeTask: (id: string) => void;
+// //   setFilters: (filters: TaskFilters) => void;
+// //   clearFilters: () => void;
   
-  // API interactions
-//   fetchTasks: () => Promise<void>;
-  createTask: (taskData: Omit<Task, 'id' | 'createdAt' | 'updatedAt'>) => Promise<void>;
-//   updateTaskStatus: (id: string, status: Task['status']) => Promise<void>;
-//   deleteTask: (id: string) => Promise<void>;
-}
+//   // API interactions
+// //   fetchTasks: () => Promise<void>;
+//   createTask: (taskData: Omit<Task, 'id' | 'createdAt' | 'updatedAt'>) => Promise<void>;
+// //   updateTaskStatus: (id: string, status: Task['status']) => Promise<void>;
+// //   deleteTask: (id: string) => Promise<void>;
+// }
 
 // const useTaskStore = create<TaskState>()(
 //   devtools(
