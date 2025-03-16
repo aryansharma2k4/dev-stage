@@ -14,12 +14,12 @@ export type Task = {
   updatedAt: Date;
 };
 
-type TaskFilters = {
-  status?: Task['status'];
-  priority?: Task['priority'];
-  assignedTo?: string;
-  projectId?: string;
-};
+// type TaskFilters = {
+//   status?: Task['status'];
+//   priority?: Task['priority'];
+//   assignedTo?: string;
+//   projectId?: string;
+// };
 
 // interface TaskState {
 //   tasks: Task[];

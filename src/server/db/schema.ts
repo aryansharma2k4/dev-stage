@@ -12,7 +12,6 @@ import {
 import { pgTable } from "drizzle-orm/pg-core";
 import { serial, text } from "drizzle-orm/pg-core";
 import { user } from "./auth-schema";
-import { unique } from "drizzle-orm/mysql-core";
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM. Use the same

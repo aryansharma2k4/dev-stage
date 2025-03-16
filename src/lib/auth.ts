@@ -4,10 +4,10 @@ import { db } from "@/server/db"; // your drizzle instance
 import { cache } from "react";
 import { headers } from "next/headers";
 import * as authSchema from "@/server/db/auth-schema";
-import { Resend } from "resend";
+// import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-const fromEmail = "no-reply@dev-stage-beta.vercel.app";
+// const resend = new Resend(process.env.RESEND_API_KEY);
+// const fromEmail = "no-reply@dev-stage-beta.vercel.app";
 
 export const auth = betterAuth({
     database: drizzleAdapter(db, {

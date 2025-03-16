@@ -1,7 +1,6 @@
 'use client'
 
 import { AuthCard } from "@daveyplate/better-auth-ui"
-import { authViewPaths } from "@daveyplate/better-auth-ui/server"
 import "@/styles/globals.css"
 import { useParams } from "next/navigation"
 import Header from "@/components/Header"

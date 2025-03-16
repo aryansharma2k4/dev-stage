@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import { Providers } from "./providers";
 import { Inter } from "next/font/google";
 import { Toaster } from "sonner";
@@ -25,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.className}`}>
       <body>
+        <Analytics />
         <TRPCReactProvider><Providers><Toaster/>{children}</Providers></TRPCReactProvider>
       </body>
     </html>

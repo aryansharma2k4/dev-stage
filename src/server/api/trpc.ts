@@ -11,7 +11,6 @@ import superjson from "superjson";
 import { ZodError } from "zod";
 
 import { db } from "@/server/db";
-import {authClient} from "@/lib/auth-client"
 import { getSession } from "@/lib/auth";
 
 
