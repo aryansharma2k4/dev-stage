@@ -44,4 +44,9 @@ export const tasks = pgTable("tasks", {
   dueDate: timestamp("due_date"),
   priority: text("priority").default("medium"),
   createdAt: timestamp("created_at").defaultNow(),
+  updatedAt: timestamp("updated_at").defaultNow().$onUpdate(() => new Date()),
+  status: text("status").default("todo"),
+  assignedTo: text("assigned_to"),
+  tags: text("tags").array(),
+  projectId: text("project_id"),
 });

@@ -20,7 +20,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 
-import Header from "@/components/ui/header";
+import Header from "@/components/Header";
 import Image from "next/image";
 
 interface FeatureCardProps {
@@ -54,9 +54,9 @@ export default function LandingPage() {
               assistance in one unified platform.
             </p>
             <div className="flex flex-col justify-center gap-4 pt-6 sm:flex-row">
-              <Button size="lg" className="gap-2">
+              <Link href="/todos"><Button size="lg" className="gap-2">
                 Get Started <ArrowRight className="h-4 w-4" />
-              </Button>
+              </Button></Link>
               <Button size="lg" variant="outline">
                 Have an invite link?
               </Button>
