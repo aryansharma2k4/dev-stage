@@ -49,3 +49,6 @@ yarn-error.log*
 drizzle/*.json
 drizzle/*.sqlite
 drizzle/*.log
+
+#debug files
+src/app/test
