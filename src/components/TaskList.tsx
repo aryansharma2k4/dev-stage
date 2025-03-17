@@ -7,6 +7,7 @@ import { Skeleton } from './ui/skeleton'
 
 const TaskList = () => {
     const { data: tasks, isLoading, error } = api.task.getTasksAssignedToUser.useQuery();
+    //please implement useSuspenseQuery() here so you can use prefetch here
 
     if (isLoading) return <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3"><Card><CardHeader><Skeleton className="h-4 w-24" /></CardHeader><CardContent><Skeleton className="h-4 w-24" /></CardContent></Card></div>
     if (error) return <div>Error loading tasks</div>
