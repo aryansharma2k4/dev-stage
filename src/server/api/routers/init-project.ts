@@ -3,6 +3,7 @@ import { createTRPCRouter, protectedProcedure } from "../trpc";
 import { db } from "@/server/db";
 import { projectMembers, projects } from "@/server/db/schema";
 import { TRPCError } from "@trpc/server";
+import { eq } from "drizzle-orm";
 export const projectRouter = createTRPCRouter({
     createProject: protectedProcedure
         .input(z.object({
@@ -54,5 +55,13 @@ export const projectRouter = createTRPCRouter({
                     project: newProject[0]
                 }
             })
-        })
+        }),
+    getProjectsAssignedToUser: protectedProcedure
+    .query(async ({ctx})=>{
+        const assignedProjects = await db.select()
+        .from(projects)
+        .where(eq(projects.ownerId, ctx.userId))
+        return assignedProjects;
+    })
+    
 })
