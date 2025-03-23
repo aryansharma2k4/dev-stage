@@ -20,6 +20,7 @@ import TaskCreator from './TaskAddDialog';
 import TaskList from './TaskList';
 import { DialogTitle } from '@radix-ui/react-dialog';
 import ProjectAddDialog from './ProjectAddDialog';
+import {api} from '@/trpc/react'
 
 // Type definitions
 type Message = {
@@ -59,7 +60,7 @@ type DevStageDashboardProps = {
   tasks: Task[];
 }
 
-const DevStageDashboard: React.FC<DevStageDashboardProps> = ({ projects: initialProjects, tasks: initialTasks }) => {
+const DevStageDashboard= () => {
   const [open, setOpen] = React.useState(false)
  
   React.useEffect(() => {
@@ -72,6 +73,9 @@ const DevStageDashboard: React.FC<DevStageDashboardProps> = ({ projects: initial
     document.addEventListener("keydown", down)
     return () => document.removeEventListener("keydown", down)
   }, [])
+
+  const initialProjects = api.project.getProjectsAssignedToUser.useSuspenseQuery()[0];
+  const initialTasks = api.task.getTasksAssignedToUser.useSuspenseQuery()[0];
   // Sample data
   const [projects, setProjects] = useState(initialProjects);
   const [tasks, setTasks] = useState(initialTasks);

@@ -1,4 +1,4 @@
-"use client";
+import { HydrateClient } from "@/trpc/server";
 import type React from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -34,10 +34,11 @@ interface TechCardProps {
   items: string[];
 }
 
-export default function LandingPage() {
+export default async function LandingPage() {
   
 
   return (
+    <HydrateClient>
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <Header/>
@@ -328,6 +329,7 @@ export default function LandingPage() {
         </div>
       </footer>
     </div>
+    </HydrateClient>
   );
 }
 
