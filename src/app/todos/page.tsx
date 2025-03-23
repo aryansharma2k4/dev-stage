@@ -17,7 +17,7 @@ const todoHomePage = async  () => {
        <ProjectList/>
        <h1 className="text-4xl font-bold">Your tasks</h1>
        {/* will pass the data prefetched from the server to the tasklist component as a props which will be used again to make it more fast */}
-       <TaskList/>
+       
        
        
        </div>

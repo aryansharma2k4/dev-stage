@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { createTRPCRouter, protectedProcedure } from '../trpc';
 import { tasks } from '@/server/db/schema';
 import { db } from '@/server/db';
-import { eq } from 'drizzle-orm';
+import { eq, and } from 'drizzle-orm';
 
 export const taskRouter = createTRPCRouter({
     createTask: protectedProcedure
@@ -43,5 +43,50 @@ export const taskRouter = createTRPCRouter({
             .where(eq(tasks.assignedTo, ctx.userId));
         
         return assignedTasks;
+    }),
+    updateTaskStatus: protectedProcedure
+  .input(
+    z.object({
+      id: z.number(), 
+      status: z.enum(["todo", "in_progress", "completed", "cancelled"]),
     })
+  )
+  .mutation(async ({ ctx, input }) => {
+    // Check if task exists and belongs to the user
+    const task = await db.select()
+      .from(tasks)
+      .where(and(eq(tasks.id, input.id), eq(tasks.assignedTo, ctx.userId)))
+      ;
+
+    if (!task) {
+      throw new Error("Task not found or unauthorized to update");
+    }
+
+    // Update the task
+    const updatedTask = await db.update(tasks)
+      .set({
+        status: input.status,
+        updatedAt: new Date()
+      })
+      .where(eq(tasks.id, input.id))
+      .returning({
+        id: tasks.id,
+        title: tasks.title,
+        description: tasks.description,
+        dueDate: tasks.dueDate,
+        priority: tasks.priority,
+        status: tasks.status,
+        assignedTo: tasks.assignedTo,
+        tags: tasks.tags,
+        createdAt: tasks.createdAt,
+        updatedAt: tasks.updatedAt
+      })
+      .then((result) => result[0]);
+
+    return {
+      success: true,
+      message: "Task status updated successfully",
+      task: updatedTask
+    };
+  }),
 });
